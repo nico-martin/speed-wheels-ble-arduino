@@ -23,3 +23,8 @@ ledCharacteristic: `f601d5ac-c20b-4917-9cfc-28788d4454be` - BLERead | BLEWrite
 
 A one-byte characteristic where you can set [one of seven LED-modes](https://github.com/nico-martin/speed-wheels-ble-arduino/blob/main/neopixel_functions.cpp).
 
+### Remote Control
+There is a second project for a browser-based remote control that uses the [WebBluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API) to communicate with the provided BLE server.
+
+Demo: [https://speed-wheels.nico.dev/](https://speed-wheels.nico.dev/)  
+Source: [https://github.com/nico-martin/speed-wheels-ble-ui](https://github.com/nico-martin/speed-wheels-ble-ui)
