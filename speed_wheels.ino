@@ -70,12 +70,12 @@ void blePeripheralDisconnectHandler(BLEDevice central) {
 void motorCharacteristicWritten(BLEDevice central, BLECharacteristic characteristic) {
   word data;
   motorCharacteristic.readValue(data);
-  moveLeftWheel((data >> (8*0)) & 0xff);
-  moveRightWheel((data >> (8*1)) & 0xff);
+  moveLeftWheel((data >> (8 * 0)) & 0xff);
+  moveRightWheel((data >> (8 * 1)) & 0xff);
 }
 
 void ledCharacteristicWritten(BLEDevice central, BLECharacteristic characteristic) {
   word data;
   ledCharacteristic.readValue(data);
-  setRingMode((data >> (8*0)) & 0xff);
+  setRingMode((data >> (8 * 0)) & 0xff);
 }

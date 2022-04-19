@@ -5,17 +5,17 @@
 #define MOTOR_RIGHT_IN1 2
 #define MOTOR_RIGHT_IN2 3
 
-void setupMotor(){
+void setupMotor() {
   pinMode(MOTOR_LEFT_IN1, OUTPUT);
   pinMode(MOTOR_LEFT_IN2, OUTPUT);
   pinMode(MOTOR_RIGHT_IN1, OUTPUT);
-  pinMode(MOTOR_RIGHT_IN2, OUTPUT);  
+  pinMode(MOTOR_RIGHT_IN2, OUTPUT);
 }
 
 int speedToByteInt(int speed) {
   int bidirectionalSpeed;
-  if(speed >= 100){
-    bidirectionalSpeed = speed - 100;  
+  if (speed >= 100) {
+    bidirectionalSpeed = speed - 100;
   } else {
     bidirectionalSpeed = (speed - 100) * -1;
   }
@@ -28,10 +28,10 @@ int speedToByteInt(int speed) {
 void moveWheel(int speed, int MOTOR_IN1, int MOTOR_IN2) {
   int byteSpeed = speedToByteInt(speed);
 
-  if(speed == 100) {
+  if (speed == 100) {
     analogWrite(MOTOR_IN1, 0);
     analogWrite(MOTOR_IN2, 0);
-  } else if(speed > 100) {
+  } else if (speed > 100) {
     analogWrite(MOTOR_IN1, byteSpeed);
     analogWrite(MOTOR_IN2, 0);
   } else {
